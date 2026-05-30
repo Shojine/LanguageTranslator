@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Computer_stuff_work\\Neumont\\CSC360\\Projects\\LanguageTranslator\\LanguageTranslator.csproj": {}
+    "C:\\Users\\ttatar\\Documents\\GitHub\\LanguageTranslator\\LanguageTranslator.csproj": {}
   },
   "projects": {
-    "C:\\Computer_stuff_work\\Neumont\\CSC360\\Projects\\LanguageTranslator\\LanguageTranslator.csproj": {
+    "C:\\Users\\ttatar\\Documents\\GitHub\\LanguageTranslator\\LanguageTranslator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Computer_stuff_work\\Neumont\\CSC360\\Projects\\LanguageTranslator\\LanguageTranslator.csproj",
+        "projectUniqueName": "C:\\Users\\ttatar\\Documents\\GitHub\\LanguageTranslator\\LanguageTranslator.csproj",
         "projectName": "LanguageTranslator",
-        "projectPath": "C:\\Computer_stuff_work\\Neumont\\CSC360\\Projects\\LanguageTranslator\\LanguageTranslator.csproj",
+        "projectPath": "C:\\Users\\ttatar\\Documents\\GitHub\\LanguageTranslator\\LanguageTranslator.csproj",
         "packagesPath": "C:\\Users\\ttatar\\.nuget\\packages\\",
-        "outputPath": "C:\\Computer_stuff_work\\Neumont\\CSC360\\Projects\\LanguageTranslator\\obj\\",
+        "outputPath": "C:\\Users\\ttatar\\Documents\\GitHub\\LanguageTranslator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Azure.AI.Translation.Text": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Google.Cloud.Translation.V2": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
