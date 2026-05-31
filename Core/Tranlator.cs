@@ -26,4 +26,9 @@ public class Translator : ITranslator
     {
         return translationService.GetSupportedLanguagesAsync().GetAwaiter().GetResult().Contains(language);
     }
+
+    public string TranslateFromLanguage(string text, string sourceLanguage, string targetLanguage)
+    {
+        return translationService.TranslateFromLanguageAsync(text, sourceLanguage, targetLanguage).GetAwaiter().GetResult();
+    }
 }

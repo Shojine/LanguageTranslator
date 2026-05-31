@@ -14,40 +14,37 @@ public class TranslatorFacade
     private TranslatorFacade() { }
 
 
-    public string Translate(bool autoDetect = true)
+    public string Translate(bool autoDetect = true, string sourceLanguage = "en")
     {
         if (autoDetect)
         {
-            string textToTranslate = ReadInput("Enter text to translate: ", false);
-            return Config.transInstance.TranslateEnglish(Config.transInstance.DetectLanguage(textToTranslate));
+            string textToTranslate = ReadInput("Enter text to translate: ");
+            return Config.transInstance.TranslateEnglish(textToTranslate);
         }
         else
         {
-            return Config.transInstance.Translate(ReadInput("Enter text to translate: ", false), ReadInput("Enter target language: ", true));
+            if(sourceLanguage == "en")
+            {
+                return Config.transInstance.Translate(ReadInput("Enter text to translate: "), ReadInput("Enter target language: ", true));
+            }
+            return Config.transInstance.TranslateFromLanguage(ReadInput("Enter text to translate: "), ReadInput("Enter source language: ", true), ReadInput("Enter target language: ", true));
         }
     }
     private string ReadInput(string prompt, bool isLanguage = false)
     {
-        Console.WriteLine(prompt);
-        if (string.IsNullOrEmpty(prompt))
+        Console.Write(prompt);
+        var input = Console.ReadLine();
+
+        if (string.IsNullOrEmpty(input))
         {
             Console.WriteLine("Input cannot be empty. Please try again.");
-            return ReadInput(prompt);
+            return ReadInput(prompt, isLanguage);
         }
-        else
+        if (isLanguage && !Config.transInstance.IsValidLanguage(input))
         {
-            var input = Console.ReadLine();
-            if(isLanguage && !Config.transInstance.IsValidLanguage(input))
-            {
-                Console.WriteLine("Invalid language. Please try again.");
-                return ReadInput(prompt, true);
-            }
-            if (string.IsNullOrEmpty(input))
-            {
-                Console.WriteLine("Input cannot be empty. Please try again.");
-                return ReadInput(prompt);
-            }
+            Console.WriteLine("Invalid language. Please try again.");
+            return ReadInput(prompt, isLanguage);
         }
-        return "error";
+        return input;
     }
 }

@@ -31,4 +31,10 @@ public class GoogleTranslateAdapter : ITranslationService
         var translation = client.TranslateText(text, targetLanguage);
         return Task.FromResult(translation.TranslatedText);
     }
+
+    public Task<string> TranslateFromLanguageAsync(string text, string sourceLanguage, string targetLanguage)
+    {
+        var translation = client.TranslateText(text, targetLanguage, sourceLanguage);
+        return Task.FromResult(translation.TranslatedText);
+    }
 }

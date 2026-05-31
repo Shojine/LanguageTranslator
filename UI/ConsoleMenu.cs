@@ -6,7 +6,9 @@ public static class ConsoleMenu
         Console.WriteLine("Welcome to the Language Translator!");
         Console.WriteLine("1. Translate Text");
         Console.WriteLine("2. Translate Text with Auto-Detect");
-        Console.WriteLine("3. Exit");
+        Console.WriteLine("3. Translate Text with Source Language");
+        Console.WriteLine("4. Translate Text with Auto-Detect and Source Language");
+        Console.WriteLine("5. Exit");
         Console.Write("Please select an option: ");
 
         switch (Console.ReadKey().Key)
@@ -22,6 +24,16 @@ public static class ConsoleMenu
                 ShowMenu(); // Loop till they choose to exit
                 break;
             case ConsoleKey.D3:
+                Console.WriteLine("\nYou selected: Translate Text with Source Language");
+                Console.WriteLine($"Translated Text: {facade.Translate(false,"")}");
+                ShowMenu(); // Loop till they choose to exit
+                break;
+            case ConsoleKey.D4:
+                Console.WriteLine("\nYou selected: Translate Text with Auto-Detect and Source Language");
+                Console.WriteLine($"Translated Text: {facade.Translate(true, "")}");
+                ShowMenu(); // Loop till they choose to exit
+                break;
+            case ConsoleKey.D5:
                 Console.WriteLine("\nExiting the application. Goodbye!");
                 Environment.Exit(0);
                 break;
