@@ -37,6 +37,7 @@ public static class ConsoleMenu
                 }
                 string translatedText = translator.Translate(text, targetLanguage);
                 Console.WriteLine($"Translated Text: {translatedText}");
+                ShowMenu(); // Loop till they choose to exit
                 break;
             case ConsoleKey.D2:
                 Console.WriteLine("\nExiting the application. Goodbye!");

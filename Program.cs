@@ -9,7 +9,8 @@ public class Program
             Console.WriteLine("Google API key is not set.");
             return;
         }
-        Config config = new Config { GoogleApiKey = apiKey };
+        Config config = Config.Instance();
+        config.GoogleApiKey = apiKey;
         config.Initialize();
         ConsoleMenu.ShowMenu();
     }

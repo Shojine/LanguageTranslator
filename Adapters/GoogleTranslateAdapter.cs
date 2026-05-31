@@ -26,9 +26,9 @@ public class GoogleTranslateAdapter : ITranslationService
         return Task.FromResult(GetSupportedLanguagesAsync().GetAwaiter().GetResult().Contains(language));
     }
 
-    public Task<string> TranslateAsync(string text, string targetLanguage, string sourceLanguage = "en")
+    public Task<string> TranslateAsync(string text, string targetLanguage)
     {
-        var translation = client.TranslateText(text, targetLanguage, sourceLanguage);
+        var translation = client.TranslateText(text, targetLanguage);
         return Task.FromResult(translation.TranslatedText);
     }
 }
