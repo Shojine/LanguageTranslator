@@ -4,6 +4,7 @@ public static class ConsoleMenu
     {
         TranslatorFacade facade = TranslatorFacade.Instance();
         Console.WriteLine("Welcome to the Language Translator!");
+        Console.WriteLine("Please select an option:");
         Console.WriteLine("1. Translate Text");
         Console.WriteLine("2. Translate Text with Auto-Detect");
         Console.WriteLine("3. Translate Text with Source Language");

@@ -25,9 +25,9 @@ public class TranslatorFacade
         {
             if(sourceLanguage == "en")
             {
-                return Config.transInstance.Translate(ReadInput("Enter text to translate: "), ReadInput("Enter target language: ", true));
+                return Config.transInstance.Translate(ReadInput("Enter text to translate: "), ReadInput("Enter target language(ex. es for Spanish): ", true));
             }
-            return Config.transInstance.TranslateFromLanguage(ReadInput("Enter text to translate: "), ReadInput("Enter source language: ", true), ReadInput("Enter target language: ", true));
+            return Config.transInstance.TranslateFromLanguage(ReadInput("Enter text to translate: "), ReadInput("Enter source language(ex. en for English): ", true), ReadInput("Enter target language(ex. es for Spanish): ", true));
         }
     }
     private string ReadInput(string prompt, bool isLanguage = false)
