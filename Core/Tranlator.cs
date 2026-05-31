@@ -12,6 +12,16 @@ public class Translator : ITranslator
         return translationService.TranslateAsync(text, targetLanguage).GetAwaiter().GetResult();
     }
 
+    public string TranslateEnglish(string text)
+    {
+        return translationService.TranslateAsync(text, "en").GetAwaiter().GetResult();
+    }
+
+    public string DetectLanguage(string text)
+    {
+        return translationService.DetectLanguageAsync(text).GetAwaiter().GetResult();
+    }
+
     public bool IsValidLanguage(string language)
     {
         return translationService.GetSupportedLanguagesAsync().GetAwaiter().GetResult().Contains(language);
