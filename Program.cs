@@ -3,7 +3,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string apiKey = "AIzaSyCDdNHm3oBSwwzC3fhFxZAs2C4nOEyUqyM";
+        string apiKey = "InputGoogleAPIKeyHere"; // Replace with your actual Google API key
         if(string.IsNullOrEmpty(apiKey))
         {
             Console.WriteLine("Google API key is not set.");
